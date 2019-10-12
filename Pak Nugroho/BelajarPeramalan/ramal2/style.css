@@ -1,0 +1,19 @@
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+form{
+    width: 80%;
+    margin: 30px auto;
+    background-color: rgb(88, 198, 241);
+    text-align: center;
+    padding: 15px;
+}
+
+h3, input{
+    display: inline;
+}
+
+.barisempat h3{
+    display: block;
+}
