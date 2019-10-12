@@ -1,0 +1,203 @@
+*{
+    margin:0;
+    padding:0;
+}
+header{
+    z-index: 10;
+    position: relative;
+    float: left;
+    width: 14%;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding:10px;
+    box-sizing: border-box;
+    padding-left: 20px;
+}
+
+header:hover{
+    z-index: 13;
+    position: relative;
+    float: left;
+    width: 14%;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding:10px;
+    box-sizing: border-box;
+    padding-left: 20px;
+}
+
+.simbol_logo{
+    float: left;
+    padding-right: 10px;
+    box-sizing: border-box;
+}
+
+.petakon_logo{
+    margin-top: 5px;
+}
+
+.container{
+    margin:auto;
+}
+
+nav{
+    z-index: 11;
+    position: relative;
+    float: right;
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 86%;
+    padding:10px;
+    height: 69px;
+    box-sizing: border-box;
+	text-align:right;
+}
+
+nav ul li{
+    display: inline-block;
+	padding:20px;
+	color:#FFFFFF;
+	font-family:Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif;
+	font-size:20px;
+	margin-top:-10px;
+}
+
+nav ul li:hover{
+    display: inline-block;
+	transform: scale(1.1);
+    color:#FFFFFF;
+    background-color: rgba(0, 0, 0, 0.8);
+	font-family:Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif;
+	font-size:20px;
+	margin-top:-10px;
+}
+
+a{
+	color:inherit;
+	text-decoration:none;
+}
+
+.banner_slide{
+    width: 100%;
+    height: 640px;
+    background-image: url("img/banner.jpg");
+    background-size: cover;
+    position: relative;
+}
+
+.arah_kiri_slide{
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 20px;
+    width: 0;
+    height: 0;
+    border-right: solid 20px #e7812e;
+    border-top: solid 20px transparent;
+    border-bottom: solid 20px transparent;
+    opacity: .5;
+    -webkit-transition: .5s;
+}
+
+.arah_kiri_slide:hover{
+    -webkit-transform: scale(1.5);
+    width: 0;
+    height: 0;
+    border-right: solid 20px #ffffff;
+    border-top: solid 20px transparent;
+    border-bottom: solid 20px transparent;
+    opacity: .4;
+}
+
+.arah_kanan_slide{
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    right: 20px;
+    width: 0;
+    height: 0;
+    border-left: solid 20px #e7812e;
+    border-top: solid 20px transparent;
+    border-bottom: solid 20px transparent;
+    opacity: .5;
+    -webkit-transition: .5s;
+}
+
+.arah_kanan_slide:hover{
+    -webkit-transform: scale(1.5);
+    width: 0;
+    height: 0;
+    border-left: solid 20px #ffffff;
+    border-top: solid 20px transparent;
+    border-bottom: solid 20px transparent;
+    opacity: .4;
+}
+
+.judul_tatacara{
+    width: 100%;
+    margin-top: 15px;
+    font-size: 24px;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.tatacara{
+    box-sizing: border-box;
+    height: 400px;
+    margin-top: 30px;
+}
+
+.tatacara1{
+    float: left;
+    width: 32%;
+    margin-left: 1%;
+    height: 360px;
+    background-color: aqua;
+}
+
+.tatacara2{
+    float: left;
+    width: 32%;
+    margin-left: 1%;
+    height: 360px;
+    background-color: aqua;
+}
+
+.tatacara3{
+    float: left;
+    width: 32%;
+    margin-left: 1%;
+    height: 360px;
+    background-color: aqua;
+}
+
+.produk{
+    box-sizing: border-box;
+    height: 
+}
+
+footer{
+    background-color:black;
+    padding:10px;
+}
+
+footer p{
+    color: white;
+    text-align:center;
+}
+
+.clear{
+    clear: both;
+}
+
+.cf:before,
+
+.cf:after {
+    content: " "; 
+    display: table; /
+}
+
+.cf:after {
+    clear: both;
+}
+
+.cf {
+    *zoom: 1;
+}
