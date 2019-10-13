@@ -7,6 +7,7 @@
 </head>
 <body>
     <form action="" method="post">
+        <div class="judul"><h1>Program Peramalan Stok</h1></div>
         <h2>Masukkan Stok Bulan Pertama</h2>
         <div class="barissatu">
             <h3>Tahun = </h3>
@@ -68,7 +69,7 @@
             $tahunb = $tahunprediksi - $tahun;
             $bulanb = $bulanprediksi - $bulan + 1;
             //Cari nilai n : jika selisih tahun = 0 dan selisih bulan > 0
-            if($tahunb==0 && $bulanb>0){
+            if($tahunb==0 && $bulanb>2){
                 $n = $bulanb;
             }
             //Cari nilai n : jika selisih tahun > 0
@@ -76,8 +77,8 @@
                 $n = $tahunb*12 + $bulanb;
             }
             //Pencarian nilai n jika data yang dimasukkan tidak memenuhi syarat.
-            else if($tahunb<0 || ($bulanb<=0 && $tahunb<=0)){
-                echo "Data tahun & bulan awal harus lebih kecil daripada tahun & bulan prediksi";
+            else if(($tahunb<0) || ($bulanb<=2 && $tahunb<=0)){
+                echo '<h2 style="color: red"> Waktu dalam kolom Prediksi haruslah waktu pada masa depan </h2>';
             }
 
             //Cari Nilai Un (Prediksi)
@@ -101,7 +102,7 @@
     
     <!--Menampilkan seluruh data dari nilai awal hingga data prediksi yang ditentukan-->
     <div class="barislima">
-        <h2>Data Stok Keseluruhan</h2>
+        <h2>Data Stok Keseluruhan :</h2>
         <?php
             for($i=0; $i<$n; $i++){
                 if($n == 1){
@@ -109,11 +110,12 @@
                     echo "<h6> 1. Prediksi Nilai pada Bulan " , BulanSwitch($bulanprediksi), " Tahun $tahunprediksi adalah $Un </h6>";
                 } else if ($n>1){
                     $Un = $nilaipertama + (($i) * $b);
-                    if($bulan == 0){
-                        $bulan = 12;
+                    if($bulan > 12){
+                        $bulan = 1;
                         $tahun = $tahun + 1;
                     }
-                    echo "<h6> ", ($i+1), ". Prediksi Nilai pada Bulan " , BulanSwitch($bulanprediksi), " Tahun $tahunprediksi adalah $Un </h6>";
+                    if($i<2){echo "<h6> ", ($i+1), ". Data Nilai pada Bulan " , BulanSwitch($bulan), " Tahun $tahun adalah $Un </h6>";}
+                    else{echo "<h6> ", ($i+1), ". Prediksi Nilai pada Bulan " , BulanSwitch($bulan), " Tahun $tahun adalah $Un </h6>";}
                     $bulan = $bulan + 1;
                 }
             }
@@ -196,6 +198,6 @@
     <option value="10">Oktober</option>
     <option value="11">November</option>
     <option value="12">Desember</option>
-    </select>'  ;
+    </select>' ;
     }
 ?>
