@@ -7,35 +7,35 @@
 </head>
 <body>
     <form action="" method="post">
+        <h2>Masukkan Stok Bulan Pertama</h2>
         <div class="barissatu">
-            <h2>Masukkan Nilai Pertama</h2>
             <h3>Tahun = </h3>
-            <input type="number" name="tahun">
+            <input type="number" name="tahun"><br>
             <h3>Bulan = </h3>
             <!--Menampilkan bulan dalam combo box, dan dimasukkan dalam variabel 'bulan' nantinya-->
-            <?php SelectBulan("bulan")?>
+            <?php SelectBulan("bulan")?><br>
             <h3>Nilai = </h3>
             <input type="number" name="nilaipertama">
-            <hr>
         </div>
 
+        <hr>
+        <h2>Masukkan Stok Bulan setelahnya</h2>
         <div class="barisdua">
-            <h2>Masukkan Nilai Bulan setelahnya</h2>
             <h3>Nilai = </h3>
             <input type="number" name="nilaikedua">
-            <hr>
         </div>
 
+        <hr>
+        <h2>Prediksi Stok pada Bulan : </h2>
         <div class="baristiga">
-            <h2>Prediksi Nilai pada Bulan : </h2>
             <h3>Tahun = </h3>
-            <input type="number" name="tahunprediksi">
+            <input type="number" name="tahunprediksi"><br>
             <h3>Bulan = </h3>
             <!--Menampilkan bulan dalam combo box, dan dimasukkan dalam variabel 'bulanprediksi' nantinya-->
-            <?php SelectBulan("bulanprediksi");?>
-            <input type="submit" value="submit" name="submit">
-            <hr>
+            <?php SelectBulan("bulanprediksi");?><br>
         </div>
+        <hr>
+        <div class="tombol"><input type="submit" value="SUBMIT" name="submit"></div>
 
         <?php
             //merekam data yang telah dimasukkan
@@ -89,33 +89,36 @@
         ?>
     </form>
     
+    <div class="hasil">
     <!--Menampilkan hasil presiksi sesuai kondisi yang dimasukkan-->
     <div class="barisempat">
-        <h4>Hasil Prediksi : </h4>
-        <h4><?php echo "Nilai b = $b, Nilai n = $n";?></h4>
-        <h4><?php echo "Data pada Bulan " , BulanSwitch($bulan), " Tahun $tahun adalah $nilaipertama";?></h4>
-        <h4><?php echo "Data pada Bulan " , BulanSwitch($bulankedua), " Tahun $tahunkedua adalah $nilaikedua";?></h4>
-        <h4><?php echo "Prediksi Nilai pada Bulan " , BulanSwitch($bulanprediksi), " Tahun $tahunprediksi adalah $Un";?></h4>
+        <h2>Hasil Prediksi : </h2>
+        <h6><?php echo "1. Data pada Bulan " , BulanSwitch($bulan), " Tahun $tahun adalah $nilaipertama";?></h6>
+        <h6><?php echo "2. Data pada Bulan " , BulanSwitch($bulankedua), " Tahun $tahunkedua adalah $nilaikedua";?></h6>
+        <h6><?php echo "3. Prediksi Nilai pada Bulan " , BulanSwitch($bulanprediksi), " Tahun $tahunprediksi adalah $Un";?></h6>
+        <h6><?php echo "Nilai b = $b, Nilai n = $n";?></h6>
     </div>
     
     <!--Menampilkan seluruh data dari nilai awal hingga data prediksi yang ditentukan-->
     <div class="barislima">
+        <h2>Data Stok Keseluruhan</h2>
         <?php
             for($i=0; $i<$n; $i++){
                 if($n == 1){
                     $Un = $nilaipertama + $b;
-                    echo "<h6> Prediksi Nilai pada Bulan " , BulanSwitch($bulanprediksi), " Tahun $tahunprediksi adalah $Un </h6>";
+                    echo "<h6> 1. Prediksi Nilai pada Bulan " , BulanSwitch($bulanprediksi), " Tahun $tahunprediksi adalah $Un </h6>";
                 } else if ($n>1){
-                    $Un = $nilaipertama + (($n-$i-1) * $b);
-                    if($bulanprediksi == 0){
-                        $bulanprediksi = 12;
-                        $tahunprediksi = $tahunprediksi - 1;
+                    $Un = $nilaipertama + (($i) * $b);
+                    if($bulan == 0){
+                        $bulan = 12;
+                        $tahun = $tahun + 1;
                     }
-                    echo "<h6> Prediksi Nilai pada Bulan " , BulanSwitch($bulanprediksi), " Tahun $tahunprediksi adalah $Un </h6>";
-                    $bulanprediksi = $bulanprediksi -1;
+                    echo "<h6> ", ($i+1), ". Prediksi Nilai pada Bulan " , BulanSwitch($bulanprediksi), " Tahun $tahunprediksi adalah $Un </h6>";
+                    $bulan = $bulan + 1;
                 }
             }
         ?>
+    </div>
     </div>
 </body>
 </html>

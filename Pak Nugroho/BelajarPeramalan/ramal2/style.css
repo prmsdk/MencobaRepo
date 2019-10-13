@@ -3,21 +3,83 @@ body{
 }
 
 form{
-    width: 80%;
-    margin: 30px auto;
+    width: 40%;
+    margin: 10px auto;
     background-color: rgb(88, 198, 241);
+    padding: 25px;
+    border-radius: 25px;
+}
+
+form input{
+    display: inline-block;
+}
+
+form h2{
     text-align: center;
-    padding: 15px;
+    margin-bottom: -1px;
 }
 
-h3, input{
+hr{
+    margin-top: 20px;
+}
+
+h3{
     display: inline;
+    text-align: left;
+    line-height: 30px;
 }
 
+h6{
+    font-weight: normal;
+}
+
+.barissatu, .barisdua, .baristiga{
+    width: 250px;
+    margin: auto;
+}
+
+.tombol{
+    margin-top: 15px;
+    text-align: center;
+}
+
+.hasil{
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
 .barisempat{
+    background-color: #a8ffe2;
+    width: 48%;
+    float: left;
+    margin-right: 5px;
+    border-radius: 15px;
+}
+
+.barisempat h2{
+    text-align: center;
+}
+
+.barisempat h6{
+    text-align: left;
+    margin-left: 40px;
+    line-height: 1px;
+}
+
+.barislima{
+    float: left;
+    width: 48%;
+    background-color: #7fffd4;
+    margin-left: 5px;
+    border-radius: 15px;
+}
+
+.barislima h2{
     text-align: center;
 }
 
 .barislima h6{
-    text-align: center;
+    text-align: left;
+    margin-left: 40px;
+    line-height: 1px;
 }
