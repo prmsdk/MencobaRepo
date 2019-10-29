@@ -1,58 +1,67 @@
 <?php
         error_reporting(0);
         $n = $_GET["n"];
-        echo '<form action="" method="post" name="asd">';
-        for($i=0; $i<$n; $i++){
-            echo '
+        ?>
+
+        <form action="" method="post" name="asd">
+        
+        <?php for($x=0; $x<$n; $x++){ ?>
             
-            <h3>Masukkan Jumlah Penjualan Kecap Bulan ke-', $i, '</h3>
-            <input type="number" name="y'.$i.'">
-            ';
-            $Ji+= $i;
+            <h3>Masukkan Jumlah Penjualan Kecap Bulan ke-<?php echo "$x" ?></h3>
+            <input type="number" name="<?php echo "y$x" ?>">
+            
+            
+            <?php
+
+            $Jx+= $x;
         }
+        ?>
+
         
-        echo '<h3>Masukkan Jumlah Penjualan Kecap Bulan ke</h3>';
-        echo '<input type="number" name="dicari">';
-        echo '<button type="submit" name="hitung">hitung</button>';
-        
+        <h3>Masukkan Jumlah Penjualan Kecap Bulan ke</h3>
+        <input type="number" name="dicari" min="<?= $n?>">
+        <button type="submit" name="hitung">hitung</button>
+    
+        <?php
+
         if(isset($_POST["hitung"])){
         $dicari = $_POST["dicari"];
-        for($i=0; $i<$n; $i++){
+        for($x=0; $x<$n; $x++){
             
-            $hitung = $_POST["y$i"];
+            $hitung = $_POST["y$x"];
 
-            $y[$i] = $hitung;
+            $y[$x] = $hitung;
             echo "<br>";
-            echo "y ke-$i = ";
-            echo $y[$i];
+            echo "y ke-$x = ";
+            echo $y[$x];
 
-            $Jy+=$y[$i];
+            $Jy+=$y[$x];
 
-            $i2[$i] = $i * $i;
+            $x2[$x] = $x * $x;
             echo "<br>";
-            echo "x2 ke-$i = $i2[$i]";
+            echo "x2 ke-$x = $x2[$x]";
 
-            $Ji2+=$i2[$i];
+            $Jx2+=$x2[$x];
 
-            $xy[$i] = $y[$i] * $i;
+            $xy[$x] = $y[$x] * $x;
             echo "<br>";
-            echo "xy ke-$i = $xy[$i]";
+            echo "xy ke-$x = $xy[$x]";
 
-            $Jxy+=$xy[$i];
+            $Jxy+=$xy[$x];
 
             echo "<br> ===== BATAS FOR =====";
         }
 
-        $b = ($n * $Jxy - $Ji * $Jy) / ($n * $Ji2 - ($Ji * $Ji));
+        $b = ($n * $Jxy - $Jx * $Jy) / ($n * $Jx2 - ($Jx * $Jx));
         
         echo "<br> Ini Sigma y = ";
         echo $Jy;
 
         echo "<br> Ini Sigma x = ";
-        echo $Ji;
+        echo $Jx;
 
         echo "<br> Ini Sigma x2 = ";
-        echo $Ji2;
+        echo $Jx2;
 
         echo "<br> Ini Sigma xy = ";
         echo $Jxy;
@@ -60,7 +69,7 @@
         echo "<br> Ini adalah b = ";
         echo $b;
 
-        $a = ($Jy / $n) - ($b * ($dicari / $n));
+        $a = ($Jy / $n) - ($b * ($Jx / $n));
 
         echo "<br> Ini adalah a = ";
         echo $a;

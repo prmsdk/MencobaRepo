@@ -11,7 +11,7 @@
         <h1>Forcasting Penjualan Kecap</h1>
         <h3>Masukkan Jumlah Bulan = </h3>
         <input type="number" name="n">
-        <button type="submit" name="bulan">masok</button>
+        <button type="submit">masok</button>
     </form>
 </body>
 </html>
