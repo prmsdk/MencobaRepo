@@ -15,14 +15,14 @@
             <h3>Bulan = </h3>
             <!--Menampilkan bulan dalam combo box, dan dimasukkan dalam variabel 'bulan' nantinya-->
             <?php SelectBulan("bulan")?><br>
-            <h3>Nilai = </h3>
+            <h3>Stok = </h3>
             <input type="number" name="nilaipertama">
         </div>
 
         <hr>
         <h2>Masukkan Stok Bulan setelahnya</h2>
         <div class="barisdua">
-            <h3>Nilai = </h3>
+            <h3>Stok = </h3>
             <input type="number" name="nilaikedua">
         </div>
 
@@ -94,9 +94,9 @@
     <!--Menampilkan hasil presiksi sesuai kondisi yang dimasukkan-->
     <div class="barisempat">
         <h2>Hasil Prediksi : </h2>
-        <h6><?php echo "1. Data pada Bulan " , BulanSwitch($bulan), " Tahun $tahun adalah $nilaipertama";?></h6>
-        <h6><?php echo "2. Data pada Bulan " , BulanSwitch($bulankedua), " Tahun $tahunkedua adalah $nilaikedua";?></h6>
-        <h6><?php echo "3. Prediksi Nilai pada Bulan " , BulanSwitch($bulanprediksi), " Tahun $tahunprediksi adalah $Un";?></h6>
+        <h6><?php echo "1. Data Stok pada Bulan " , BulanSwitch($bulan), " Tahun $tahun adalah $nilaipertama";?></h6>
+        <h6><?php echo "2. Data Stok pada Bulan " , BulanSwitch($bulankedua), " Tahun $tahunkedua adalah $nilaikedua";?></h6>
+        <h6><?php echo "3. Prediksi Stok pada Bulan " , BulanSwitch($bulanprediksi), " Tahun $tahunprediksi adalah $Un";?></h6>
         <h6><?php echo "Nilai b = $b, Nilai n = $n";?></h6>
     </div>
     
@@ -107,15 +107,15 @@
             for($i=0; $i<$n; $i++){
                 if($n == 1){
                     $Un = $nilaipertama + $b;
-                    echo "<h6> 1. Prediksi Nilai pada Bulan " , BulanSwitch($bulanprediksi), " Tahun $tahunprediksi adalah $Un </h6>";
+                    echo "<h6> 1. Prediksi Stok pada Bulan " , BulanSwitch($bulanprediksi), " Tahun $tahunprediksi adalah $Un </h6>";
                 } else if ($n>1){
                     $Un = $nilaipertama + (($i) * $b);
                     if($bulan > 12){
                         $bulan = 1;
                         $tahun = $tahun + 1;
                     }
-                    if($i<2){echo "<h6> ", ($i+1), ". Data Nilai pada Bulan " , BulanSwitch($bulan), " Tahun $tahun adalah $Un </h6>";}
-                    else{echo "<h6> ", ($i+1), ". Prediksi Nilai pada Bulan " , BulanSwitch($bulan), " Tahun $tahun adalah $Un </h6>";}
+                    if($i<2){echo "<h6> ", ($i+1), ". Data Stok pada Bulan " , BulanSwitch($bulan), " Tahun $tahun adalah $Un </h6>";}
+                    else{echo "<h6> ", ($i+1), ". Prediksi Stok pada Bulan " , BulanSwitch($bulan), " Tahun $tahun adalah $Un </h6>";}
                     $bulan = $bulan + 1;
                 }
             }

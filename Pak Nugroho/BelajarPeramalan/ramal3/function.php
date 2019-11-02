@@ -7,7 +7,7 @@
         
         <?php for($x=0; $x<$n; $x++){ ?>
             
-            <h3>Masukkan Jumlah Penjualan Kecap Bulan ke-<?php echo "$x" ?></h3>
+            <h3>Masukkan Jumlah Penjualan Kecap Bulan ke-<?php echo $x+1 ?></h3>
             <input type="number" name="<?php echo "y$x" ?>">
             
             
@@ -74,7 +74,7 @@
         echo "<br> Ini adalah a = ";
         echo $a;
 
-        $bulan = $a + ($b * $dicari);
+        $bulan = $a + ($b * ($dicari-1));
 
         echo "<br> Ini adalah penjualan kecap bulan ke-$dicari = ";
         echo $bulan;
